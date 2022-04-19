@@ -24,5 +24,7 @@ function add() {
             mas.push(obj)
             localStorage.setItem("kanji-list", JSON.stringify(mas))
         } 
+    }else {
+        
     }
 }
