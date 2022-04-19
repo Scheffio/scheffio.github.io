@@ -1,0 +1,13 @@
+@import url(/css/core.css);
+@import url(/css/add.css);
+
+
+@font-face {
+    font-family: Noto;
+    src: url(/font/NotoSansJP-Bold.otf);
+}
+
+@font-face {
+    font-family: inter;
+    src: url(/font/Inter-VariableFont_slnt\,wght.ttf);
+}

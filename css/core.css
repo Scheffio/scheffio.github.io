@@ -1,0 +1,205 @@
+body, html {
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.kanji {
+    font-size: 150px;
+    margin: 0;
+    font-family: Noto;
+    transition: .3s;
+    text-align: center;
+}
+
+.translate, .readings {
+    font-family: inter;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    gap: 50px;
+}
+
+.kanji-input {
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid #cacaca;
+    padding: 5px;
+    text-align: center;
+    font-family: inter;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.kanji-input::placeholder {
+    text-align: center;
+    font-family: inter;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+}
+
+.kanji-input:focus {
+    border-bottom: 2px solid #c9cdff;
+    transition: .3s;
+}
+
+.kanji-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kanji.true {
+    color: green;
+    transition: .3s;
+}
+
+.kanji.false {
+    color: #950000;
+    transition: .3s;
+}
+
+.burger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 45px;
+    height: 30px;
+}
+
+.burger span,
+.burger:after,
+.burger:before {
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    background: #36393e;
+    border-radius: 5px;
+}
+
+.burger span {
+    top: 16px;
+}
+
+.burger:after,
+.burger:before {
+    content: '';
+}
+
+.burger:after {
+    bottom: -2px;
+    transition: .3s;
+    transform: rotate(0deg);
+}
+
+.burger:before {
+    top: 4px;
+    transition: .3s;
+    transform: rotate(0deg);
+}
+
+.burger.open-menu span {
+    opacity: 0;
+    transition: .5s;
+    background-color: white;
+}
+
+.burger.open-menu:before {
+    transform: rotate(45deg);
+    top: 10px;
+    transition: .5s;
+    background-color: white;
+}
+
+.burger.open-menu:after {
+    transform: rotate(-45deg);
+    bottom: 17px;
+    transition: .5s;
+    background-color: white;
+}
+
+.menu {
+    position: fixed;
+    left: -20%;
+    top: 0;
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    background-color: #36393e;
+}
+
+.menu > a {
+    text-decoration: none;
+    font-family: inter;
+    font-size: 20px;
+    color: white;
+    transition: .3s;
+}
+
+.menu > a:hover {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.menu > a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: .3s;
+}
+
+.menu > a:hover::after {
+    transition: .3s;
+    transform: scaleX(1);
+}
+
+.menu.open-menu {
+    display: flex;
+    transition: .3s;
+    animation: show .5s ease-in-out 1;
+    animation-fill-mode: forwards;
+}
+
+.menu.hide-menu {
+    transition: .3s;
+    left: 0px;
+    animation: hide .5s ease-in-out 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show {
+    100% {
+        left: 0px;
+    }
+}
+
+@keyframes hide {
+    100% {
+        left: -20%;
+    }
+}
+
+@keyframes swing {
+    100% {
+        left: 250%;
+    }
+}

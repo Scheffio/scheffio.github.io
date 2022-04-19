@@ -1,0 +1,66 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+form > input:not([type="submit"]) {
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid #cacaca;
+    padding: 5px;
+    font-family: inter;
+    font-size: 20px;
+    transition: .3s;
+}
+
+form > input:not([type="submit"]):placeholder {
+    font-family: inter;
+    font-size: 20px;
+}
+
+form > input:not([type="submit"]):focus {
+    border-bottom: 2px solid #c9cdff;
+    transition: .3s;
+}
+
+form > label {
+    font-family: inter;
+    font-size: 14px;
+}
+
+form > input[type="submit"] {
+    border: 0;
+    outline: 0;
+    border: 2px solid #c9cdff;
+    background-color: transparent;
+    color: #4a4a4a;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 40px;
+    transition: .3s;
+}
+
+form > input[type="submit"]:hover {
+    transition: .3s;
+    transform: translateY(-7px);
+    box-shadow: 0px -2px 2px #00000014, 0px 2px 20px 5px #00000014;
+}
+
+.back {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    transition: .3s;
+    color: black;
+}
+
+.material-icons {
+    font-size: 36px !important;
+}
+
+.back:hover {
+    transition: .3s;
+    color: #c9cdff;
+}
