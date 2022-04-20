@@ -12,19 +12,43 @@
 
 <body>
     <div class="wrap">
-        <div class="kanji-block">
-            <p class="kanji"></p>
-            <p class="translate"></p>
+        <div class="game">
+            <div class="kanji-block">
+                <p class="kanji"></p>
+                <p class="translate"></p>
+            </div>
+            <div class="bar">
+                <progress max="100" value="0"></progress>
+                <div class="status">
+                    <p>0%</p>
+                    <p>100%</p>
+                </div>
+            </div>
+            <div class="quick-buttons">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+            </div>
         </div>
-        <div class="quick-buttons">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
+        <div class="result hidden">
+            <h3>Вы набрали</h3>
+            <h1 class="score"></h1>
+            <button class="reset">Начать заново</button>
         </div>
     </div>
     <a href="index.html" class="back"><span class="material-icons">arrow_back</span></a>
+    <img src="/img/fire.png" alt="fire" class="hardcore-btn">
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">X</span>
+            <h1>Хардкор режим</h1>
+            <p>В этом режиме недоступны переводы иероглифов. <br>Основные чтения заменены на побочные.<br>Уверены, что хотите попробовать?</p>
+            <a href="#">Поехали</a>
+        </div>
+    </div>
     <script src="js/quick-kanji.js"></script>
+    <script src="/js/modal.js"></script>
 </body>
 
 </html>

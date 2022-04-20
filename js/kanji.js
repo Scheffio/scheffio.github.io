@@ -63,9 +63,7 @@ function getKanjiByIndex(index) {
 }
 
 function setKanji() {
-    const kanji = getKanjiByIndex(block.dataset.kanji)
     kanjiTitle.innerHTML = kanjiList[block.dataset.kanji]["knj"]
-    console.log(kanjiList[block.dataset.kanji]["knj"]);
     kanjiTranslate.innerHTML = kanjiList[block.dataset.kanji]["trns"]
 }
 
@@ -81,7 +79,8 @@ function genKanji() {
                 setTimeout(() => {
                     kanjiTitle.classList.remove('true')
                     document.querySelector('.kanji-input').value = ''
-                    genKanji()
+                    getKanjiByIndex(randomKanji(kanjiList))
+                    setKanji()
                 }, 500)
             } else {
                 kanjiTitle.classList.add('false')
