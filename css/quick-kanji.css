@@ -204,22 +204,22 @@ progress::-webkit-progress-value {
 }
 
 .modal.opened > .modal-content {
-    animation: show .5s ease-in-out 1;
+    animation: show-modal .5s ease-in-out 1;
     animation-fill-mode: forwards;
 }
 
 .modal.closing > .modal-content {
-    animation: hide .5s ease-in-out 1;
+    animation: hide-modal .5s ease-in-out 1;
     animation-fill-mode: forwards;
 }
 
-@keyframes show {
+@keyframes show-modal {
     100% {
         top: 0;
     }
 }
 
-@keyframes hide {
+@keyframes hide-modal {
     0% {
         top: 0;
     }
