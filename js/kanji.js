@@ -1,4 +1,3 @@
-
 window.onload = () => {
     genKanji()
     document.querySelector('.kanji-input').focus()
@@ -42,6 +41,27 @@ if (localStorage.getItem('kanji-list') == null) {
             "reading2": "re",
             "reading3": "to",
             "trns": "останавливаться"
+        },
+        {
+            "knj": "族",
+            "main": "zoku",
+            "reading2": "zoku",
+            "reading3": "zoku",
+            "trns": "семья | племя"
+        },
+        {
+            "knj": "親",
+            "main": "oya",
+            "reading2": "shin",
+            "reading3": "shita",
+            "trns": "родители | личное"
+        },
+        {
+            "knj": "店",
+            "main": "mise",
+            "reading2": "ten",
+            "reading3": "ten",
+            "trns": "заведение | ларёк"
         }
     ]))
 }

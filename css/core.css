@@ -5,6 +5,10 @@ body, html {
     width: 100%;
 }
 
+a {
+    cursor: pointer;
+}
+
 .kanji {
     font-size: 150px;
     margin: 0;
