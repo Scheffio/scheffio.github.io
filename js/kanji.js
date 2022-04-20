@@ -64,30 +64,30 @@ function getKanjiByIndex(index) {
 
 function setKanji() {
     const kanji = getKanjiByIndex(block.dataset.kanji)
-    kanjiTitle.innerHTML = kanji['knj']
-    kanjiTranslate.innerHTML = kanji['trns']
+    kanjiTitle.innerHTML = kanjiList[block.dataset.kanji]["knj"]
+    console.log(kanjiList[block.dataset.kanji]["knj"]);
+    kanjiTranslate.innerHTML = kanjiList[block.dataset.kanji]["trns"]
 }
 
 function genKanji() {
     if (kanjiList.length == 0) return;
 
-
     document.querySelector('.kanji-input').addEventListener('keydown', (e) => {
         if (e.keyCode === 13) {
             let inpt = document.querySelector('.kanji-input').value.toLowerCase()
             if (inpt == kanjiList[rand]['main'] || inpt == kanjiList[rand]['reading2'] || inpt == kanjiList[rand]['reading3']) {
-                kanji.classList.add('true')
-                kanji.classList.remove('false')
+                kanjiTitle.classList.add('true')
+                kanjiTitle.classList.remove('false')
                 setTimeout(() => {
-                    kanji.classList.remove('true')
+                    kanjiTitle.classList.remove('true')
                     document.querySelector('.kanji-input').value = ''
                     genKanji()
                 }, 500)
             } else {
-                kanji.classList.add('false')
-                kanji.classList.remove('true')
+                kanjiTitle.classList.add('false')
+                kanjiTitle.classList.remove('true')
                 setTimeout(() => {
-                    kanji.classList.remove('false')
+                    kanjiTitle.classList.remove('false')
                     document.querySelector('.kanji-input').value = ''
                 }, 500)
             }
@@ -99,7 +99,7 @@ document.querySelector('.readings').addEventListener('click', function () {
     this.classList.toggle('clicked');
 
     if (this.classList.contains('clicked')) {
-        this.innerHTML = `${kanjiList[rand]['main']} | ${kanjiList[rand]['reading2']} | ${kanjiList[rand]['reading3']}`
+        this.innerHTML = `${kanjiList[block.dataset.kanji]['main']} | ${kanjiList[rand]['reading2']} | ${kanjiList[rand]['reading3']}`
     } else {
         this.innerHTML = 'Чтения'
     }

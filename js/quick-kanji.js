@@ -44,6 +44,8 @@ buttons.forEach((button, i) => {
 })
 
 const game = {
+    currentLevel: 0,
+    levels: 10,
     points: 0,
     list: [],
     select(index) {
