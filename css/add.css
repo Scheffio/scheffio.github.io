@@ -1,11 +1,11 @@
-form {
+.add-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 
 }
 
-form > input:not([type="submit"]) {
+.add-form > input:not([type="submit"]) {
     outline: 0;
     border: 0;
     border-bottom: 2px solid #cacaca;
@@ -15,22 +15,22 @@ form > input:not([type="submit"]) {
     transition: .3s;
 }
 
-form > input:not([type="submit"]):placeholder {
+.add-form > input:not([type="submit"]):placeholder {
     font-family: inter;
     font-size: 20px;
 }
 
-form > input:not([type="submit"]):focus {
+.add-form > input:not([type="submit"]):focus {
     border-bottom: 2px solid #c9cdff;
     transition: .3s;
 }
 
-form > label {
+.add-form > label {
     font-family: inter;
     font-size: 14px;
 }
 
-form > input[type="submit"] {
+.add-form > input[type="submit"] {
     border: 0;
     outline: 0;
     border: 2px solid #c9cdff;
@@ -42,7 +42,7 @@ form > input[type="submit"] {
     transition: .3s;
 }
 
-form > input[type="submit"]:hover {
+.add-form > input[type="submit"]:hover {
     transition: .3s;
     background-color: #c9cdff;
     color: white;

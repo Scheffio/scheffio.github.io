@@ -13,12 +13,38 @@ body, html {
     text-align: center;
 }
 
-.translate, .readings {
+.translate {
     font-family: inter;
     text-align: center;
     font-size: 16px;
     letter-spacing: 2px;
     margin: 0;
+    position: relative;
+    opacity: 1;
+    user-select: none;
+}
+
+.readings {
+    font-family: inter;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin: 0;
+    position: relative;
+    opacity: .5;
+    user-select: none;
+    height: 16px;
+}
+
+.readings.clicked {
+    font-family: inter;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin: 0;
+    position: relative;
+    opacity: 1;
+    user-select: none;
 }
 
 .wrap {
@@ -198,8 +224,5 @@ body, html {
     }
 }
 
-@keyframes swing {
-    100% {
-        left: 250%;
-    }
-}
+
+
