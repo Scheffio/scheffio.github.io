@@ -6,7 +6,7 @@ window.onload = () => {
 }
 
 
-if (localStorage.getItem('kanji-list') == null) {
+if (localStorage.getItem('kanji-list') == null || localStorage.getItem('kanji-list').length == 2) {
     localStorage.setItem('kanji-list', JSON.stringify([{
             "knj": "飲",
             "main": "no",
@@ -96,6 +96,8 @@ function genKanji() {
             if (inpt == kanjiList[rand]['main'] || inpt == kanjiList[rand]['reading2'] || inpt == kanjiList[rand]['reading3']) {
                 kanjiTitle.classList.add('true')
                 kanjiTitle.classList.remove('false')
+                document.querySelector('.hiragana-reading').classList.toggle('clicked')
+                document.querySelector('.hiragana-reading').innerHTML = "Чтение"
                 setTimeout(() => {
                     kanjiTitle.classList.remove('true')
                     document.querySelector('.kanji-input').value = ''

@@ -9,7 +9,7 @@ a {
     cursor: pointer;
 }
 
-.kanji {
+.kanji, .hiragana {
     font-size: 150px;
     margin: 0;
     font-family: Noto;
@@ -28,7 +28,7 @@ a {
     user-select: none;
 }
 
-.readings {
+.readings, .hiragana-reading {
     font-family: inter;
     text-align: center;
     font-size: 13px;
@@ -40,7 +40,7 @@ a {
     height: 16px;
 }
 
-.readings.clicked {
+.readings.clicked, .hiragana-reading.clicked {
     font-family: inter;
     text-align: center;
     font-size: 16px;
@@ -60,7 +60,7 @@ a {
     gap: 50px;
 }
 
-.kanji-input {
+.kanji-input, .hiragana-input {
     outline: 0;
     border: 0;
     border-bottom: 2px solid #cacaca;
@@ -72,37 +72,37 @@ a {
     transition: .3s;
 }
 
-.kanji-input::placeholder {
+.kanji-input::placeholder, .hiragana-input::placeholder {
     text-align: center;
     font-family: inter;
     letter-spacing: 0.1em;
     font-size: 14px;
 }
 
-.kanji-input:focus {
+.kanji-input:focus, .hiragana-input:focus {
     border-bottom: 2px solid #c9cdff;
     transition: .3s;
 }
 
-.kanji-block {
+.kanji-block, .hiragana-block {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.kanji.true {
+.kanji.true, .hiragana.true {
     color: green;
     transition: .3s;
 }
 
-.kanji.false {
+.kanji.false, .hiragana.false {
     color: #950000;
     transition: .3s;
 }
 
 .burger {
     display: block;
-    position: fixed;
+    position: absolute;
     top: 20px;
     left: 20px;
     width: 45px;
@@ -170,7 +170,7 @@ a {
     height: 100%;
     align-items: center;
     justify-content: center;
-    gap: 100px;
+    gap: 50px;
     background-color: #36393e;
 }
 

@@ -2,25 +2,46 @@ table {
     border: 2px solid #c9cdff;
 }
 
-th, td {
+th,
+td {
     border: 2px solid #c9cdff;
     font-family: inter;
     text-align: center;
     padding: 10px;
 }
 
-td > a {
+td>a {
     text-decoration: none;
     color: black;
     transition: .3s;
 }
 
-td > a:hover {
+td>a:hover {
     transition: .3s;
     color: #aeb0ca;
 }
 
 .kanji-table {
-    font-size: 32px;
+    width: 50px;
 }
 
+.kanji-table > input {
+    font-size: 32px;
+    font-family: inter;
+}
+
+td>input {
+    outline: 0;
+    border: 0;
+    width: 90%;
+    border-bottom: 2px solid #cacaca;
+    text-align: center;
+    font-family: inter;
+    font-size: 16px;
+}
+
+td>input:focus {
+    border-bottom: 2px solid #c9cdff;
+    transition: .3s;
+
+}

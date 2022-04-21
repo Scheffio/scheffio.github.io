@@ -24,13 +24,7 @@ function add() {
             mas.push(obj)
             localStorage.setItem("kanji-list", JSON.stringify(mas))
         } 
+    }else {
+        alert("Вы заполнили не все поля!")
     }
 }
-
-document.querySelectorAll('.add-form input[type="text"]').forEach((elem) => {
-    elem.addEventListener('input', () => {
-        if(elem.value = '') {
-            document.querySelector('.btn').toggleAttribute("disabled")
-        }
-    })
-})
