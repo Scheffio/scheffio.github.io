@@ -58,6 +58,7 @@ a {
     flex-direction: column;
     height: 100%;
     gap: 50px;
+    position: relative;
 }
 
 .kanji-input, .hiragana-input, .katakana-input {
