@@ -58,7 +58,9 @@
 .speedy>.icon,
 .hiragana>.icon,
 .katakana>.icon,
-.words>.icon {
+.words>.icon,
+.kanji-mode>.icon,
+.words-mode>.icon {
     font-size: 64px;
     font-weight: 900;
     font-family: mont;

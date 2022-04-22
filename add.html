@@ -10,21 +10,30 @@
 </head>
 <body>
     <div class="wrap">
-        <form class="add-form">
-            <label>Канджи:</label>
-            <input type="text" class="knj">
-            <label>Основное чтение:</label>
-            <input type="text" class="main">
-            <label>Второе:</label>
-            <input type="text" class="reading2">
-            <label>Третье:</label>
-            <input type="text" class="reading3">
-            <label>Перевод:</label>
-            <input type="text" class="trns">
-            <input type="submit" class="btn" value="Добавить" onclick="add()">
-        </form>
+        <h1 class="title">Добавить элементы</h1>
+        <div class="typestoadd">
+            <a href="addkanji.html">
+                <div class="modes-item kanji-mode">
+                    <div class="icon">
+                        <p>漢字</p>
+                    </div>
+                    <div class="name">
+                        <p>Кандзи</p>
+                    </div>
+                </div>
+            </a>
+            <a href="addwords.html">
+                <div class="modes-item words-mode">
+                    <div class="icon">
+                        <p>語</p>
+                    </div>
+                    <div class="name">
+                        <p>Слова</p>
+                    </div>
+                </div>
+            </a>
+        </div>
         <a href="modes.html" class="back"><span class="material-icons">arrow_back</span></a>
     </div>
-    <script src="/js/add.js"></script>
 </body>
 </html>

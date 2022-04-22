@@ -96,10 +96,10 @@ function genKanji() {
             if (inpt == kanjiList[rand]['main'] || inpt == kanjiList[rand]['reading2'] || inpt == kanjiList[rand]['reading3']) {
                 kanjiTitle.classList.add('true')
                 kanjiTitle.classList.remove('false')
-                document.querySelector('.hiragana-reading').classList.toggle('clicked')
-                document.querySelector('.hiragana-reading').innerHTML = "Чтение"
                 setTimeout(() => {
                     kanjiTitle.classList.remove('true')
+                    document.querySelector('.readings').classList.remove('clicked')
+                    document.querySelector('.readings').innerHTML = "Чтение"
                     document.querySelector('.kanji-input').value = ''
                     getKanjiByIndex(randomKanji(kanjiList))
                     setKanji()

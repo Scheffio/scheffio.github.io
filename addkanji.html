@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanji</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap">
+        <h1 class="title">Добавить Канджи</h1>
+        <form class="add-form">
+            <label>Канджи:</label>
+            <input type="text" class="knj">
+            <label>Основное чтение:</label>
+            <input type="text" class="main">
+            <label>Второе:</label>
+            <input type="text" class="reading2">
+            <label>Третье:</label>
+            <input type="text" class="reading3">
+            <label>Перевод:</label>
+            <input type="text" class="trns">
+            <input type="submit" class="btn" value="Добавить" onclick="addkanji()">
+        </form>
+        <a href="add.html" class="back"><span class="material-icons">arrow_back</span></a>
+    </div>
+    <script src="/js/addkanji.js"></script>
+</body>
+</html>

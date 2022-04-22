@@ -4,15 +4,48 @@ function normalize(value) {
     let {
         knj: kanji,
         trns: translate,
-        main
+        main,
+        reading2,
+        reading3
     } = value
 
     return {
         kanji,
         main,
-        translate
+        translate,
+        reading2,
+        reading3
     }
 }
+
+const hardcodeStartBtn = document.querySelector('.modal-content > a')
+const hardcodeAbout = document.querySelector('.modal-content p')
+
+hardcodeStartBtn.addEventListener('click', function () {
+    this.classList.toggle('isHardcore')
+
+    if(this.classList.contains('isHardcore')) {
+        this.innerHTML = 'Остановить'
+        hardcodeAbout.innerHTML = 'Что, уже наигрался?'
+
+        kanjiTranslate.classList.toggle('hardcore')
+
+        modal.classList.add('closing')
+        setTimeout(() => {
+            modal.classList.remove('opened')
+        }, 500)
+
+    }else {
+        this.innerHTML = 'Поехали'
+        hardcodeAbout.innerHTML = 'В этом режиме недоступны переводы иероглифов. <br>Основные чтения заменены на побочные.\nУверены, что хотите попробовать?'
+       
+        kanjiTranslate.classList.toggle('hardcore')
+        modal.classList.add('closing')
+        setTimeout(() => {
+            modal.classList.remove('opened')
+        }, 500)
+    }
+})
 
 function getKanjiByIndex(index) {
     return normalize(kanjiList[index])

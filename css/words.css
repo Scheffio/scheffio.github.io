@@ -1,0 +1,82 @@
+.words-input {
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid #cacaca;
+    padding: 5px;
+    text-align: center;
+    font-family: inter;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.words-input::placeholder {
+    text-align: center;
+    font-family: inter;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+}
+
+.words-input:focus {
+    border-bottom: 2px solid #c9cdff;
+    transition: .3s;
+}
+
+.words-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.words.true, .words.true {
+    color: green;
+    transition: .3s;
+}
+
+.words.false, .words.false {
+    color: #950000;
+    transition: .3s;
+}
+
+.words {
+    font-size: 76px;
+    margin: 0;
+    font-family: Noto;
+    transition: .3s;
+    text-align: center;
+}
+
+.wordtranslate,  .wordreading{
+    font-family: inter;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin: 0;
+    position: relative;
+    opacity: 1;
+    user-select: none;
+}
+
+.wordtranslate, .wordreading {
+    font-family: inter;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin: 0;
+    position: relative;
+    opacity: .5;
+    user-select: none;
+    height: 16px;
+}
+
+.wordtranslate.clicked, .wordreading.clicked {
+    font-family: inter;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin: 0;
+    position: relative;
+    opacity: 1;
+    user-select: none;
+}
+

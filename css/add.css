@@ -64,3 +64,19 @@
     transition: .3s;
     color: #c9cdff;
 }
+
+.title {
+    font-family: inter;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.typestoadd {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.typestoadd > a {
+    text-decoration: none;
+}

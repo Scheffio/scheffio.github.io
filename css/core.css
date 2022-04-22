@@ -9,7 +9,7 @@ a {
     cursor: pointer;
 }
 
-.kanji, .hiragana {
+.kanji, .hiragana, .katakana {
     font-size: 150px;
     margin: 0;
     font-family: Noto;
@@ -28,7 +28,7 @@ a {
     user-select: none;
 }
 
-.readings, .hiragana-reading {
+.readings, .hiragana-reading, .katakana-reading {
     font-family: inter;
     text-align: center;
     font-size: 13px;
@@ -40,7 +40,7 @@ a {
     height: 16px;
 }
 
-.readings.clicked, .hiragana-reading.clicked {
+.readings.clicked, .hiragana-reading.clicked, .katakana-reading.clicked {
     font-family: inter;
     text-align: center;
     font-size: 16px;
@@ -60,7 +60,7 @@ a {
     gap: 50px;
 }
 
-.kanji-input, .hiragana-input {
+.kanji-input, .hiragana-input, .katakana-input {
     outline: 0;
     border: 0;
     border-bottom: 2px solid #cacaca;
@@ -72,30 +72,30 @@ a {
     transition: .3s;
 }
 
-.kanji-input::placeholder, .hiragana-input::placeholder {
+.kanji-input::placeholder, .hiragana-input::placeholder, .katakana-input::placeholder {
     text-align: center;
     font-family: inter;
     letter-spacing: 0.1em;
     font-size: 14px;
 }
 
-.kanji-input:focus, .hiragana-input:focus {
+.kanji-input:focus, .hiragana-input:focus, .katakana-input:focus {
     border-bottom: 2px solid #c9cdff;
     transition: .3s;
 }
 
-.kanji-block, .hiragana-block {
+.kanji-block, .hiragana-block, .katakana-block {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.kanji.true, .hiragana.true {
+.kanji.true, .hiragana.true, .katakana.true {
     color: green;
     transition: .3s;
 }
 
-.kanji.false, .hiragana.false {
+.kanji.false, .hiragana.false, .katakana.false {
     color: #950000;
     transition: .3s;
 }
@@ -162,7 +162,7 @@ a {
 
 .menu {
     position: fixed;
-    left: -20%;
+    left: -200px;
     top: 0;
     width: 200px;
     display: none;
@@ -195,11 +195,13 @@ a {
     background-color: white;
     transform: scaleX(0);
     transition: .3s;
+    opacity: 0;
 }
 
 .menu > a:hover::after {
     transition: .3s;
     transform: scaleX(1);
+    opacity: 1;
 }
 
 .menu.open-menu {
@@ -207,6 +209,10 @@ a {
     transition: .3s;
     animation: show .5s ease-in-out 1;
     animation-fill-mode: forwards;
+}
+
+body.open-menu {
+    overflow: hidden;
 }
 
 .menu.hide-menu {
@@ -224,7 +230,7 @@ a {
 
 @keyframes hide {
     100% {
-        left: -20%;
+        left: -200px;
     }
 }
 

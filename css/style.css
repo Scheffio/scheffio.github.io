@@ -5,6 +5,7 @@
 @import url(/css/edit.css);
 @import url(/css/delete.css);
 @import url(/css/main.css);
+@import url(/css/words.css);
 
 
 @font-face {
@@ -29,10 +30,35 @@
 
 @media (max-width:619px) {
     .modes-list {
-        padding-top: 750px;
+        max-height: 400px;
     }
 
     .words {
         margin-bottom: 50px;
+    }
+
+    .typestoadd {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+        left: -100%;
+    }
+
+    @keyframes hide {
+        100% {
+            left: -100%;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .modal-content {
+        width: 90%;
+    }
+
+    .modal-content>h1 {
+        font-size: 2rem;
     }
 }

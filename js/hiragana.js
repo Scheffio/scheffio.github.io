@@ -185,7 +185,7 @@ if (localStorage.getItem('hiragana-list') == null || localStorage.getItem('hirag
         },
         {
             "knj": "を",
-            "main": "WO (O)",
+            "main": "WO",
         },
         {
             "knj": "ん",
@@ -220,14 +220,12 @@ function genhiragana() {
     document.querySelector('.hiragana-input').addEventListener('keydown', (e) => {
         if (e.keyCode === 13) {
             let inpt = document.querySelector('.hiragana-input').value.toUpperCase()
-            console.log(inpt);
-            console.log(hiraganaList[rand]['main']);
             if (inpt == hiraganaList[rand]['main']) {
                 hiraganaTitle.classList.add('true')
                 hiraganaTitle.classList.remove('false')
                 setTimeout(() => {
                     hiraganaTitle.classList.remove('true')
-                    document.querySelector('.hiragana-reading').classList.toggle('clicked')
+                    document.querySelector('.hiragana-reading').classList.remove('clicked')
                     document.querySelector('.hiragana-reading').innerHTML = "Чтение"
                     document.querySelector('.hiragana-input').value = ''
                     gethiraganaByIndex(randomhiragana(hiraganaList))

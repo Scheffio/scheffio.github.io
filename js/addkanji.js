@@ -1,4 +1,4 @@
-function add() {
+function addkanji() {
     let addKanji = document.querySelector('.knj')
     let addMain = document.querySelector('.main')
     let addReading2 = document.querySelector('.reading2')
