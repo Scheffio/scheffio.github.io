@@ -85,6 +85,7 @@ function getKanjiByIndex(index) {
 function setKanji() {
     kanjiTitle.innerHTML = kanjiList[block.dataset.kanji]["knj"]
     kanjiTranslate.innerHTML = kanjiList[block.dataset.kanji]["trns"]
+    pronounce(kanjiList[block.dataset.kanji]['main'])
 }
 
 function genKanji() {
@@ -126,3 +127,15 @@ document.querySelector('.readings').addEventListener('click', function () {
     }
 
 })
+
+
+function pronounce(word) {
+    const voices = window.speechSynthesis.getVoices();
+    const lastVoice = '3'
+    
+    console.log(voices);
+
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.voice = voices[lastVoice]; 
+    window.speechSynthesis.speak(utterance);
+}
