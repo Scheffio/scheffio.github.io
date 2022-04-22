@@ -5,5 +5,5 @@
 
 Авторы:
 
-Scheff: https://github.com/Scheffio
+Scheff: https://github.com/Scheffio \n
 Gallactica: https://github.com/Gallactica
