@@ -70,13 +70,25 @@ const kanjiList = JSON.parse(localStorage.getItem('kanji-list')) || []
 const block = document.querySelector('.kanji-block')
 const kanjiTitle = block.querySelector('.kanji')
 const kanjiTranslate = block.querySelector('.translate')
+const volume = document.querySelector('.volume')
 
 let rand = 0
 
 function randomKanji(mas) {
     rand = Math.floor(Math.random() * mas.length)
     block.dataset.kanji = rand
+
+    if(volume.classList.contains('volumeOff')) {
+        volume.setAttribute('src', '/img/volumeOff.png')
+    }else {
+        pronounce(kanjiList[block.dataset.kanji]['main'])
+    }
 }
+
+volume.addEventListener('click', function() {
+    this.classList.toggle('volumeOff')
+})
+
 
 function getKanjiByIndex(index) {
     return kanjiList[index]
@@ -85,7 +97,6 @@ function getKanjiByIndex(index) {
 function setKanji() {
     kanjiTitle.innerHTML = kanjiList[block.dataset.kanji]["knj"]
     kanjiTranslate.innerHTML = kanjiList[block.dataset.kanji]["trns"]
-    pronounce(kanjiList[block.dataset.kanji]['main'])
 }
 
 function genKanji() {
@@ -130,12 +141,18 @@ document.querySelector('.readings').addEventListener('click', function () {
 
 
 function pronounce(word) {
-    const voices = window.speechSynthesis.getVoices();
-    const lastVoice = '3'
+    const text = new SpeechSynthesisUtterance(word)
+    const voice = 'Microsoft Ayumi - Japanese (Japan)'
+    const synth = window.speechSynthesis
     
-    console.log(voices);
+    let voices = []
+    voices = synth.getVoices()
+    
+    for(i = 0; i < voices.length ; i++) {
+        if(voices[i].name === voice) {
+            text.voice = voices[i];
+        }
+    }
 
-    const utterance = new SpeechSynthesisUtterance(word);
-    utterance.voice = voices[lastVoice]; 
-    window.speechSynthesis.speak(utterance);
+    synth.speak(text)
 }

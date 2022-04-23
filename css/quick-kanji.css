@@ -233,3 +233,58 @@ progress::-webkit-progress-value {
 .translate.hardcore {
     display: none;
 }
+
+.settings-modal-content {
+    min-height: 300px;
+}
+
+.settings-modal-content > form {
+    display: flex;
+    font-family: inter;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.settings-modal-content > form > input {
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid #cacaca;
+    padding: 5px;
+    text-align: center;
+    font-family: inter;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.settings-modal-content > form > input::placeholder {
+    text-align: center;
+    font-family: inter;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+}
+
+.settings-modal-content > form > input:focus {
+    border-bottom: 2px solid #c9cdff;
+    transition: .3s;
+}
+
+.settings-modal-content > form > input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.settings-modal-content > form > input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.settings-modal-content > h1 {
+    background: #000000;
+    background: linear-gradient(to top, #000000 0%, #BDBDBD 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: steamy;
+    font-size: 60px;
+}

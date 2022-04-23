@@ -1,0 +1,119 @@
+.result > * {
+    font-family: inter;
+}
+
+.result > h4, .result > h3 {
+    margin: 0;
+    position: relative;
+    animation: swingFromTop 1s ease-in-out forwards 1;
+}
+
+.result > h3 {
+    font-size: 32px;
+}
+
+.result > h4 {
+    font-size: 26px;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.scores > p {
+    font-size: 28px;
+}
+
+.scores > * {
+    margin: 0;
+}
+
+.reset {
+    border: 0;
+    outline: 0;
+    border: 2px solid #c9cdff;
+    background-color: transparent;
+    color: #4a4a4a;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 40px;
+    transition: .3s;
+    animation: buttonSwing 1s ease-in-out forwards 1;
+    position: relative;
+}
+
+.reset:hover {
+    transition: .3s;
+    background-color: #c9cdff;
+    color: white;
+}
+
+.score {
+    position: relative;
+    animation: swingFromLeft 1s ease-in-out forwards 1;
+}
+
+.of {
+    position: relative;
+    animation: swingFromRight 1s ease-in-out forwards 1;
+}
+
+.scores > p {
+    animation: fadeIn 1.5s ease-in-out forwards 1;
+}
+
+@keyframes swingFromLeft {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes swingFromRight {
+    0% {
+        right: -100%;
+        opacity: 0;
+    }
+
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes swingFromTop {
+    0% {
+        opacity: 0;
+        top: -150%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+@keyframes buttonSwing {
+    0% {
+        opacity: 0;
+        top: 50%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0%;
+    }
+}

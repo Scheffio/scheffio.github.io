@@ -6,6 +6,7 @@
 @import url(/css/delete.css);
 @import url(/css/main.css);
 @import url(/css/words.css);
+@import url(/css/result.css);
 
 
 @font-face {
@@ -26,6 +27,11 @@
 @font-face {
     font-family: mont;
     src: url(/font/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: steamy;
+    src: url(/font/Steamy.otf);
 }
 
 @media (max-width:619px) {

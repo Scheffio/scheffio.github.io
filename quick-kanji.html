@@ -32,19 +32,35 @@
             </div>
         </div>
         <div class="result hidden">
-            <h3>Вы набрали</h3>
-            <h1 class="score"></h1>
+            <h3>Поздравляем!</h3>
+            <h4>Вы набрали</h4>
+            <div class="scores">
+                <h1 class="score"></h1>
+                <p>из</p>
+                <h1 class="of"></h1>
+            </div>
             <button class="reset">Начать заново</button>
         </div>
     </div>
     <a href="index.html" class="back"><span class="material-icons">arrow_back</span></a>
     <img src="/img/fire.png" alt="fire" class="hardcore-btn">
-    <div class="modal">
-        <div class="modal-content">
+    <img src="/img/settings.png" alt="settings" class="settings">
+    <div class="hardcore-modal modal">
+        <div class="hardcore-modal-content modal-content">
             <span class="close">X</span>
             <h1>Хардкор режим</h1>
             <p>В этом режиме недоступны переводы иероглифов. <br>Основные чтения заменены на побочные.<br>Уверены, что хотите попробовать?</p>
             <a href="#">Поехали</a>
+        </div>
+    </div>
+    <div class="settings-modal modal">
+        <div class="settings-modal-content modal-content">
+            <span class="close">X</span>
+            <h1>Настройки</h1>
+            <form>
+                <label>Количество уровней:</label>
+                <input type="number" class="levelAmmount" max="50" min="1" value="10">
+            </form>
         </div>
     </div>
     <a href="modes.html" class="back"><span class="material-icons">arrow_back</span></a>

@@ -234,5 +234,34 @@ body.open-menu {
     }
 }
 
+.settings {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    opacity: 0.5;
+    transition: .3s;
+}
 
+.settings:hover {
+    opacity: 1;
+    transition: .3s;
+}
 
+.volume {
+    transform: rotateY(180deg);
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    opacity: .5;
+    transition: opacity;
+    transition-duration: .3s;
+}
+
+.volume:hover {
+    transition: .3s;
+    opacity: 1;
+}

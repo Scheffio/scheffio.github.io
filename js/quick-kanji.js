@@ -149,9 +149,11 @@ const game = {
             progress.value = 100 * (this.currentLevel / this.levels)
     },
     showResult() {
-        resultBlock.querySelector('.score').textContent = this.points > 0 ?
-            `${this.points} из ${this.maxPoints}` :
-            'Вы ушли в минус'
+        document.querySelector('.score').innerHTML = this.points
+        document.querySelector('.of').innerHTML = this.maxPoints
+        if(this.points < 0) {
+            document.querySelector('.scores').innerHTML = 'К сожалению, Вы ушли в минус.'
+        }
     },
     setKanji(kanji) {
         kanjiTitle.textContent = kanji.kanji
