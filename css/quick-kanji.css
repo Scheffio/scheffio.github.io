@@ -81,7 +81,7 @@ progress::-webkit-progress-value {
 }
 
 .hardcore-btn {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
     widows: 25px;
@@ -287,4 +287,46 @@ progress::-webkit-progress-value {
     -webkit-text-fill-color: transparent;
     font-family: steamy;
     font-size: 60px;
+}
+
+.translationMode {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    color: black;
+    font-family: inter;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .5;
+    user-select: none;
+    transition: .3s;
+}
+
+.translationMode:hover {
+    transition: .3s;
+    opacity: 1;
+}
+
+.settings-modal-content > form > a {
+    border: 0;
+    outline: 0;
+    border: 2px solid #c9cdff;
+    background-color: transparent;
+    color: #4a4a4a;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 40px;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.settings-modal-content > form > a:hover {
+    transition: .3s;
+    background-color: #c9cdff;
+    color: white;
 }

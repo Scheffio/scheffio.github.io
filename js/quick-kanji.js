@@ -18,33 +18,65 @@ function normalize(value) {
     }
 }
 
-const hardcodeStartBtn = document.querySelector('.modal-content > a')
-const hardcodeAbout = document.querySelector('.modal-content p')
+const hardcodeStartBtn = document.querySelector('.hardcore-modal-content > a')
+const hardcodeAbout = document.querySelector('.hardcore-modal-content > p')
+const modal = document.querySelector('.hardcore-modal')
 
 hardcodeStartBtn.addEventListener('click', function () {
     this.classList.toggle('isHardcore')
 
     if(this.classList.contains('isHardcore')) {
-        this.innerHTML = 'Остановить'
-        hardcodeAbout.innerHTML = 'Что, уже наигрался?'
-
-        kanjiTranslate.classList.toggle('hardcore')
+        game.mode = 'hardcore'
+        game.render()
 
         modal.classList.add('closing')
         setTimeout(() => {
+            this.innerHTML = 'Остановить'
+            hardcodeAbout.innerHTML = 'Что, уже наигрался?'
             modal.classList.remove('opened')
         }, 500)
-
     }else {
-        this.innerHTML = 'Поехали'
-        hardcodeAbout.innerHTML = 'В этом режиме недоступны переводы иероглифов. <br>Основные чтения заменены на побочные.\nУверены, что хотите попробовать?'
-       
-        kanjiTranslate.classList.toggle('hardcore')
+        game.mode = 'standart'
+        game.render()
+
         modal.classList.add('closing')
         setTimeout(() => {
+            this.innerHTML = 'Поехали'
+            hardcodeAbout.innerHTML = 'В этом режиме недоступны переводы иероглифов. <br>Основные чтения заменены на побочные.\nУверены, что хотите попробовать?'
             modal.classList.remove('opened')
         }, 500)
     }
+})
+
+const translationOnlyBtn = document.querySelector('.translationMode')
+
+translationOnlyBtn.addEventListener('click', function () {
+    this.classList.toggle('isTranslationOnly')
+
+    if(this.classList.contains('isTranslationOnly')) {
+        this.textContent = 'A'
+
+        game.mode = 'translationOnly'
+        game.render()
+    }else {
+        this.textContent = 'あ'
+        game.mode = 'standart'
+        game.render()
+    }
+})
+
+const saveSettings = document.querySelector('.settingsSaveBtn')
+const levelAmmount = document.querySelector('.levelAmmount')
+
+saveSettings.addEventListener('click', () => {
+    game.levels = levelAmmount.value
+    game.reset()
+    game.render()
+
+    settingsModal.classList.add('closing')
+        setTimeout(() => {
+            settingsModal.classList.remove('opened')
+        }, 500)
 })
 
 function getKanjiByIndex(index) {
@@ -141,9 +173,7 @@ const game = {
         let currentKanji = this.list[this.index]
 
         this.setKanji(currentKanji)
-        this.list.forEach((element, i) => {
-            buttons[i].textContent = element.main
-        })
+        this.setVariants(this.list)
 
         if (progress)
             progress.value = 100 * (this.currentLevel / this.levels)
@@ -157,8 +187,36 @@ const game = {
     },
     setKanji(kanji) {
         kanjiTitle.textContent = kanji.kanji
-        if (this.mode == 'standart')
+        if (this.mode == 'standart'){
             kanjiTranslate.textContent = kanji.translate
+        }else if(this.mode == 'hardcore') {
+            kanjiTranslate.textContent = ''
+        }else if(this.mode == 'translationOnly') {
+            kanjiTranslate. textContent = ''
+        }
+    },
+    getRandomReading(reading2,reading3) {
+        let readingsArr = []
+
+        readingsArr.push(reading2)
+        readingsArr.push(reading3)
+
+        return Math.floor(Math.random() * readingsArr.length)
+    },
+    setVariants(list) {
+        list.forEach((element, i) => {
+            if(this.mode == 'standart') {
+                buttons[i].textContent = element.main
+            }else if(this.mode == 'hardcore') {
+                if(this.getRandomReading(element.reading2,element.reading3) == '0') {
+                    buttons[i].textContent = element.reading2
+                }else {
+                    buttons[i].textContent = element.reading3
+                }
+            }else if(this.mode == 'translationOnly') {
+                buttons[i].textContent = element.translate
+            }
+        })
     }
 }
 

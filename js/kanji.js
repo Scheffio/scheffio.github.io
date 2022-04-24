@@ -77,16 +77,19 @@ let rand = 0
 function randomKanji(mas) {
     rand = Math.floor(Math.random() * mas.length)
     block.dataset.kanji = rand
-
-    if(volume.classList.contains('volumeOff')) {
-        volume.setAttribute('src', '/img/volumeOff.png')
-    }else {
+    if(!volume.classList.contains('volumeOff')) {
         pronounce(kanjiList[block.dataset.kanji]['main'])
     }
 }
 
 volume.addEventListener('click', function() {
     this.classList.toggle('volumeOff')
+
+    if(this.classList.contains('volumeOff')) {
+        volume.setAttribute('src', '/img/volumeOff.png')
+    }else {
+        volume.setAttribute('src', '/img/volumeOn.png')
+    }
 })
 
 
@@ -141,10 +144,10 @@ document.querySelector('.readings').addEventListener('click', function () {
 
 
 function pronounce(word) {
+    const synth = window.speechSynthesis
     const text = new SpeechSynthesisUtterance(word)
     const voice = 'Microsoft Ayumi - Japanese (Japan)'
-    const synth = window.speechSynthesis
-    
+
     let voices = []
     voices = synth.getVoices()
     
