@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanji</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrap">
+    <h1 class="title-saves">Управление сохранениями</h1>
+    <div class="saves-manage">
+      <a href="#">Скачать</a>
+      <a href="#">Загрузить</a>
+    </div>
+    <div class="download">
+      <h1 class="title">Скачать сохранение</h1>
+      <div class="download-inputs">
+        <a href="#" onclick="exportKanji(this)" class="export-kanji"><span class="material-icons">download</span>Скачать Канджи</a>
+        <a href="#" onclick="exportWords(this)" class="export-words"><span class="material-icons">download</span>Скачать Слова</a>
+      </div>
+      <a href="#" class="show-back">Назад</a>
+    </div>
+    <div class="upload">
+      <h1 class="title">Загрузить сохранение</h1>
+      <div class="upload-inputs">
+        <div class="upload-kanjiBlock">
+          <label>Канджи</label>
+          <label for="upload-kanji" class="upload-btn">
+            <span class="material-icons">upload</span>Выберите файл
+          </label>
+          <input type="file" onchange="onChange(this)" id="upload-kanji" class="upload-kanji">
+        </div>
+        <div class="upload-wordsBlock">
+          <label>Слова</label>
+          <label for="upload-words" class="upload-btn">
+            <span class="material-icons">upload</span>Выберите файл
+          </label>
+        <input type="file" onchange="onChange(this)" id="upload-words" class="upload-words">
+        </div>
+      </div>
+      <a href="#" class="show-back">Назад</a>
+    </div>
+    <a href="modes.html" class="back"><span class="material-icons">arrow_back</span></a>
+    <script src="/js/save.js"></script>
+</body>
+
+</html>
+
+
+<!-- <a id="exportJSON" onclick="exportJson(this);" class="btn"><i class="icon-download"></i> export json</a>
+
+<script>
+  function exportJson(el) {
+
+    let data = "text/json;charset=utf-8," + encodeURIComponent(localStorage.getItem('words-list'));
+
+    el.setAttribute("href", "data:"+data);
+    el.setAttribute("download", "data.json");    
+}
+</script> -->
